@@ -43,3 +43,6 @@ RUN chown -R www-data:www-data storage bootstrap/cache
 
 EXPOSE 80
 RUN php artisan migrate --force || true
+RUN php artisan config:clear || true
+RUN php artisan route:clear || true
+RUN php artisan view:clear || true
